@@ -1,0 +1,12 @@
+
+<div class="todo-card">
+    <h4 class="todo-title">{{toDoItem.srNo}}-&nbsp;<u>{{toDoItem.title}}</u></h4>
+    <p class="todo-desc">{{toDoItem.desc.substring(0,48)}}...</p>
+    <div class="todo-actions">
+      <div *ngIf="this.toDoItem.active" class="complete-icon">
+        <img src="https://sidp919.github.io/ToDoList-AngularApp/assets/images/tick_symbol.png" alt="Completed" data-toggle="tooltip" title="Mark as Completed" (click)="onComplete(toDoItem)"/>
+      </div>
+      <img src="https://th.bing.com/th/id/OIP.JymbH67S1jo-lRK9jNGHrQHaHa?w=199&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7" (click)="onDelete(toDoItem)" class="delete-icon mx-2 ml-1 my-1 d-inline-block" alt="Delete" data-toggle="tooltip" title="Delete Task" />
+    </div>
+  </div>
+  

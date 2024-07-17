@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" class="task-form" novalidate>
+    <div class="form-group">
+      <label for="taskTitle" class="form-label"><h5>Title:</h5></label>
+      <input type="text" 
+             placeholder="For ex. Study" id="taskTitle" name="taskTitle" 
+             [(ngModel)]="taskTitle" required class="form-input">
+      <div class="valid-feedback">
+        <h6>Seems fine!</h6>
+      </div>
+      <div class="invalid-feedback">
+        <h6>Please provide a valid Title</h6>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="taskDescription" class="form-label"><h5>Task Description:</h5></label>
+      <textarea rows="4" cols="35" id="taskDescription" name="taskDescription"
+                [(ngModel)]="taskDescription" required class="form-textarea">Description of task</textarea>
+      <div class="valid-feedback">
+        <h6>Seems fine!</h6>
+      </div>
+      <div class="invalid-feedback">
+        <h6>Please provide a valid Description</h6>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="submit-button">Add task</button>
+    </div>
+  </form>
+  

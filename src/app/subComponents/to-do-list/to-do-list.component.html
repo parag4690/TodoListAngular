@@ -1,0 +1,36 @@
+<div class="task-header">
+    <h3 class="task-title"><u>Add Tasks:</u></h3>
+  </div>
+  <app-add-to-do-item class="add-to-do-item" (addToDo)="addToDo($event)"></app-add-to-do-item>
+  <div class="task-header my-2">
+    <h3 class="task-title"><u>Tasks to be completed:</u></h3>
+  </div>
+  <div *ngIf="this.todosArr.length === 0; else elseBlock" class="no-tasks">
+    <h5 class="no-tasks-message">No Tasks to display.</h5>
+    <script>console.log("No Tasks to Display.")</script>
+  </div>
+  <ng-template #elseBlock>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let todo of todosArr" class="col-lg-3 col-md-4 col-sm-4 col-6 mb-2 todo-item">
+          <app-to-do-item [toDoItem]="todo" (todoDeleteEmitter)="deleteTodo($event)" (todoCompletedEmitter)="markAsCompleted($event)"></app-to-do-item>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <div *ngIf="this.todosCompleted.length !== 0;" class="completed-tasks-section">
+    <div class="task-header my-2">
+      <h3 class="task-title"><u>Completed Tasks:</u></h3>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let todo of todosCompleted" class="col-lg-3 col-md-4 col-sm-4 col-6 mb-2 todo-item">
+          <app-to-do-item [toDoItem]="todo" (todoDeleteEmitter)="deleteTodoC($event)"></app-to-do-item>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  

@@ -1,0 +1,69 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  /* ToDo Card */
+  .todo-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+   
+  }
+  
+  .todo-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .todo-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .todo-desc {
+    margin: 0 0 1rem 0;
+    color: #555;
+  }
+  
+  .todo-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .complete-icon img,
+  .delete-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .complete-icon img:hover,
+  .delete-icon:hover {
+    opacity: 0.7;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .todo-title {
+      font-size: 1rem;
+    }
+  
+    .todo-desc {
+      font-size: 0.9rem;
+    }
+  
+    .complete-icon img,
+    .delete-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
